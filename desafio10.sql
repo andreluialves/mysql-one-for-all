@@ -4,8 +4,6 @@ INNER JOIN SpotifyClone.songs AS s
 ON s.id = h.song_id
 INNER JOIN SpotifyClone.users AS u
 ON u.id = h.user_id
-INNER JOIN SpotifyClone.plans AS p
-ON u.plan_id = p.id
-WHERE p.plan IN ('gratuito', 'pessoal')
+WHERE u.plan_id IN (1,4)
 GROUP BY s.song
 ORDER BY s.song;
